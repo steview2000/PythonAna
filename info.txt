@@ -1,0 +1,4 @@
+Annita should write to get the latest changes (overrides her path):
+
+git fetch --all
+git reset --hard origin/master
