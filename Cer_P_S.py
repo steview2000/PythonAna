@@ -2,6 +2,8 @@
 # by Stephan Weiss
 # changes addes 
 
+
+
 #TODO: - Change input from single tiff file to one big tiff file
 #	   - Determine maximum, beginning and end, calculated position where it has 25 and 75% of the maximum
 #		 and fit a line. From this get the slope. Also get the integral of the curve from the beginning to the
@@ -11,7 +13,7 @@
 
 import glob
 import os.path
-import Image
+import image
 import os
 import sys
 from scipy.optimize import leastsq
@@ -27,14 +29,14 @@ curr_pos= 0
 
 # Name of the DataSet
 #DataSet = raw_input("DataSet: ")
-DataSet='BDNF_Phl1104'
+#DataSet='BDNF_Phl1104'
 #DataSet='NPY_PHL_pcDNA31124-1'
-
+DataSet='dec18nontransfec4'
 # The Path of the DataSet - should be changed if you use your external hard drive
 
 #PATH = 'F:\\HOLZLABDATA\ANALYZEDPTIRFData\SecretionBDNF_PHL\BDNF_Phl10232014\\'+DataSet+'/'
-
-PATH = '/home/stevie/Desktop/'+DataSet+'/'
+PATH = 'D:\Ptirf-ECD\Annita -DAta-D_Drive\Dec182017\\'+DataSet+'/'
+#PATH = '/home/stevie/Desktop/'+DataSet+'/'
 #PATH='/media/My Passport/HOLZLABDATA/ANALYZEDPTIRFData/SecretionBDNF_PHL/BDNF_Phl10232014/'+DataSet+"/"
 
 correct=0;  #1 turns on the diI correction procedure; 0 leaves it off - maybe not necessary

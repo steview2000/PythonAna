@@ -1,4 +1,4 @@
-import Image
+import PIL.Image as Image
 import numpy as np
 
 # More convenient parameter input
@@ -8,18 +8,23 @@ def askVal(s):
 			x = input(s)
 			break
 		except NameError:
-			print "Only numbers alowed"					
+			print "Only numbers allowed"					
 	return x
 
 # Function definition for exponential fit
 def ExpFit(p,x,y):
-	A1 = p[0]
-	b1 = p[1]
-	x01= p[2]
-	A2 = p[3]
-	b2 = p[4]
-	x02= p[5]
-	fitError = (y-A1*np.exp(-b1*(x-x01))-A2*np.exp(-b2*(x-x02)))**2
+	A = p[0]
+	b = p[1]
+	x0= p[2]
+	
+	fitError = (y-A*np.exp(-b*(x-x0)))**2
+	#A1 = p[0]
+	#b1 = p[1]
+	#x01= p[2]
+	#A2 = p[3]
+	#b2 = p[4]
+	#x02= p[5]
+	#fitError = (y-A1*np.exp(-b1*(x-x01))-A2*np.exp(-b2*(x-x02)))**2
 	return fitError
 
 # Loading all images into one big array
